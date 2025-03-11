@@ -11,7 +11,7 @@ enhancement for previous 1
 enhancement for previous 2
 Change for branch 10
 change for master
-Change for branch 16
+Change for branch 16 - fixed after the first time merged to staging 
 change for branch 11
 Change for branch 10
 change for master
