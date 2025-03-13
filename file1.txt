@@ -2,5 +2,17 @@ change for branch02
 change for branch 1
 change for branch-04
 change for branch 3
+change for branch 08
+change for branch 07
+change for branch 05 to staging
+change for branch-06 staging
+
+enhancement for previous 1
+enhancement for previous 2
 Change for branch 10
 change for master
+Change for branch 16 - fixed after the first time merged to staging -fixed second time
+change for branch 11
+Change for branch 10
+change for master
+change for branch 15
