@@ -1,0 +1,32 @@
+name: Deploy Based on Release Type
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Determine Environment
+        id: env
+        run: |
+          if [[ "${{ github.event.release.prerelease }}" == "true" ]]; then
+            echo "ENV=staging" >> $GITHUB_ENV
+          elif [[ "${{ github.event.release.target_commitish }}" == "master" ]]; then
+            echo "ENV=production" >> $GITHUB_ENV
+          else
+            echo "Not deploying."
+            exit 1
+          fi
+
+      - name: Deploy to Staging
+        if: env.ENV == 'staging'
+        run: echo "Deploying to Staging"
+
+      - name: Deploy to Production
+        if: env.ENV == 'production'
+        run: echo "Deploying to Production"
